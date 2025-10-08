@@ -1,0 +1,21 @@
+CustomerID,FirstName,LastName,Email,Phone,SSN,CreditCard,CVV,Expiry,BillingAddress,DateOfBirth,AccountNumber,Flag
+C10001,John,Smith,john.smith@email.com,555-0101,123-45-6789,4532123456789012,123,12/25,"123 Main St, New York NY 10001",1975-03-15,ACC-2024-001,flag{customer_pii_exposed}
+C10002,Sarah,Johnson,sarah.j@email.com,555-0102,234-56-7890,5425678901234567,456,08/26,"456 Oak Ave, Los Angeles CA 90001",1982-07-22,ACC-2024-002,
+C10003,Michael,Williams,mwilliams@email.com,555-0103,345-67-8901,4916789012345678,789,03/27,"789 Elm St, Chicago IL 60601",1968-11-30,ACC-2024-003,
+C10004,Emily,Brown,ebrown@email.com,555-0104,456-78-9012,6011123456789012,234,06/25,"321 Pine Rd, Houston TX 77001",1990-05-18,ACC-2024-004,
+C10005,David,Jones,djones@email.com,555-0105,567-89-0123,3782123456789012,567,11/26,"654 Maple Dr, Phoenix AZ 85001",1955-09-08,ACC-2024-005,
+C10006,Patricia,Garcia,pgarcia@email.com,555-0106,678-90-1234,4024123456789012,890,02/27,"987 Cedar Ln, Philadelphia PA 19101",1988-02-14,ACC-2024-006,
+C10007,Robert,Miller,rmiller@email.com,555-0107,789-01-2345,5541234567890123,321,09/25,"654 Birch Ave, San Antonio TX 78201",1962-08-22,ACC-2024-007,
+C10008,Linda,Davis,ldavis@email.com,555-0108,890-12-3456,6011234567890123,654,04/26,"321 Spruce St, San Diego CA 92101",1995-11-03,ACC-2024-008,
+C10009,James,Rodriguez,jrodriguez@email.com,555-0109,901-23-4567,4532234567890123,987,07/27,"555 Willow Rd, Dallas TX 75201",1978-01-25,ACC-2024-009,
+C10010,Maria,Martinez,mmartinez@email.com,555-0110,012-34-5678,5425789012345678,147,10/25,"777 Aspen Way, San Jose CA 95101",1985-12-08,ACC-2024-010,flag{csv_full_pii_data}
+C10011,Christopher,Hernandez,chernandez@email.com,555-0111,123-45-6790,4916890123456789,258,01/26,"888 Palm St, Austin TX 78701",1970-06-14,ACC-2024-011,
+C10012,Jessica,Lopez,jlopez@email.com,555-0112,234-56-7891,6011345678901234,369,05/27,"999 Fir Ln, Jacksonville FL 32201",1992-09-30,ACC-2024-012,
+C10013,Matthew,Gonzalez,mgonzalez@email.com,555-0113,345-67-8902,3782234567890123,741,12/25,"111 Dogwood Dr, Fort Worth TX 76101",1965-04-17,ACC-2024-013,
+C10014,Ashley,Wilson,awilson@email.com,555-0114,456-78-9013,4024234567890123,852,08/26,"222 Hickory Ct, Columbus OH 43201",1987-07-05,ACC-2024-014,
+C10015,Daniel,Anderson,danderson@email.com,555-0115,567-89-0124,5541345678901234,963,03/27,"333 Redwood Ave, Charlotte NC 28201",1993-10-22,ACC-2024-015,
+C10016,Michelle,Thomas,mthomas@email.com,555-0116,678-90-1235,6011456789012345,159,11/25,"444 Sequoia Blvd, San Francisco CA 94101",1980-02-11,ACC-2024-016,
+C10017,Joshua,Taylor,jtaylor@email.com,555-0117,789-01-2346,4532345678901234,357,06/26,"555 Magnolia St, Indianapolis IN 46201",1972-08-28,ACC-2024-017,
+C10018,Amanda,Moore,amoore@email.com,555-0118,890-12-3457,5425890123456789,753,02/27,"666 Sycamore Rd, Seattle WA 98101",1989-12-15,ACC-2024-018,
+C10019,Andrew,Jackson,ajackson@email.com,555-0119,901-23-4568,4916901234567890,951,09/25,"777 Cottonwood Way, Denver CO 80201",1976-05-03,ACC-2024-019,
+C10020,Stephanie,Martin,smartin@email.com,555-0120,012-34-5679,6011567890123456,357,04/26,"888 Juniper Ln, Washington DC 20001",1991-11-19,ACC-2024-020,flag{twenty_customers_leaked}

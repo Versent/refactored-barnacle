@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Protected Health Information (PHI) Export -->
+<!-- WARNING: HIPAA Regulated Data - Training Purposes Only -->
+<!-- FLAG{xml_export_with_phi} -->
+
+<HealthcareDataExport>
+    <ExportMetadata>
+        <ExportDate>2024-10-20T10:30:00Z</ExportDate>
+        <ExportedBy>system_admin@ctf-training-hospital.com</ExportedBy>
+        <System>Electronic Health Records System v3.5</System>
+        <RecordCount>150</RecordCount>
+        <DataClassification>Protected Health Information (PHI)</DataClassification>
+    </ExportMetadata>
+    
+    <DatabaseConfiguration>
+        <ConnectionString>postgresql://phi_admin:PatientData!2024@phi-database.ctf-training.internal:5432/patient_records</ConnectionString>
+        <BackupServer>postgresql://backup_user:BackupPHI!2024@phi-backup.ctf-training.internal:5432/patient_records_backup</BackupServer>
+        <APIEndpoint>https://ehr-api.ctf-training.internal/v1/</APIEndpoint>
+        <APIKey>ehr_api_master_key_abcdefgh123456789</APIKey>
+        <APISecret>ehr

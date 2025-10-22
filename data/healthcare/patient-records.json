@@ -1,0 +1,477 @@
+{
+  "medical_facility": "CTF Training Hospital",
+  "data_classification": "Protected Health Information (PHI)",
+  "warning": "HIPAA regulated data - Training purposes only",
+  "flag_location": "FLAG{phi_json_data_exposure}",
+  "patients": [
+    {
+      "patient_id": "PAT-2024-001",
+      "medical_record_number": "MRN-123456",
+      "full_name": "Robert Michael Johnson",
+      "date_of_birth": "1980-05-15",
+      "ssn": "555-12-3456",
+      "gender": "Male",
+      "blood_type": "O+",
+      "contact": {
+        "email": "robert.johnson@email.com",
+        "phone": "+61-400-123-456",
+        "emergency_contact": "Sarah Johnson (Wife) - +61-400-123-457",
+        "address": {
+          "street": "123 Collins Street",
+          "city": "Melbourne",
+          "state": "VIC",
+          "postcode": "3000",
+          "country": "Australia"
+        }
+      },
+      "insurance": {
+        "provider": "Medicare Australia",
+        "policy_number": "2123456789",
+        "member_id": "MED-AUS-123456",
+        "group_number": "GRP-987654"
+      },
+      "medical_conditions": [
+        "Type 2 Diabetes Mellitus",
+        "Hypertension (Stage 2)",
+        "Hyperlipidemia",
+        "Chronic Lower Back Pain"
+      ],
+      "medications": [
+        {
+          "name": "Metformin",
+          "dosage": "500mg",
+          "frequency": "Twice daily",
+          "prescribing_doctor": "Dr. Sarah Williams",
+          "start_date": "2020-03-15"
+        },
+        {
+          "name": "Lisinopril",
+          "dosage": "10mg",
+          "frequency": "Once daily",
+          "prescribing_doctor": "Dr. Sarah Williams",
+          "start_date": "2019-08-20"
+        },
+        {
+          "name": "Atorvastatin",
+          "dosage": "20mg",
+          "frequency": "Once daily at bedtime",
+          "prescribing_doctor": "Dr. Sarah Williams",
+          "start_date": "2021-01-10"
+        }
+      ],
+      "allergies": [
+        "Penicillin (severe reaction - anaphylaxis)",
+        "Sulfa drugs (rash)",
+        "Latex (contact dermatitis)"
+      ],
+      "recent_visits": [
+        {
+          "visit_date": "2024-09-15",
+          "reason": "Annual physical examination",
+          "doctor": "Dr. Sarah Williams",
+          "diagnosis": "Stable chronic conditions",
+          "notes": "Blood pressure: 138/88, Blood glucose: 145 mg/dL (fasting)",
+          "prescriptions_updated": true
+        },
+        {
+          "visit_date": "2024-06-20",
+          "reason": "Follow-up for diabetes management",
+          "doctor": "Dr. Sarah Williams",
+          "diagnosis": "Type 2 Diabetes - suboptimal control",
+          "notes": "HbA1c: 7.8%, recommended dietary changes",
+          "lab_orders": ["HbA1c", "Lipid panel", "Comprehensive metabolic panel"]
+        }
+      ],
+      "lab_results": {
+        "last_updated": "2024-09-15",
+        "results": {
+          "HbA1c": "7.5%",
+          "total_cholesterol": "205 mg/dL",
+          "ldl_cholesterol": "130 mg/dL",
+          "hdl_cholesterol": "42 mg/dL",
+          "triglycerides": "165 mg/dL",
+          "creatinine": "1.1 mg/dL",
+          "egfr": "85 mL/min/1.73m2"
+        }
+      },
+      "family_history": {
+        "father": "Type 2 Diabetes, Coronary artery disease (deceased at 68)",
+        "mother": "Hypertension, Stroke at age 72",
+        "siblings": "Brother with Type 2 Diabetes"
+      },
+      "flag": "FLAG{complete_patient_record_exposed}"
+    },
+    {
+      "patient_id": "PAT-2024-002",
+      "medical_record_number": "MRN-234567",
+      "full_name": "Emily Catherine Davis",
+      "date_of_birth": "1992-08-20",
+      "ssn": "666-77-8888",
+      "gender": "Female",
+      "blood_type": "A+",
+      "contact": {
+        "email": "emily.davis@email.com",
+        "phone": "+61-400-234-567",
+        "emergency_contact": "James Davis (Husband) - +61-400-234-568",
+        "address": {
+          "street": "456 George Street",
+          "city": "Sydney",
+          "state": "NSW",
+          "postcode": "2000",
+          "country": "Australia"
+        }
+      },
+      "insurance": {
+        "provider": "Bupa Health Insurance",
+        "policy_number": "BUPA-987654321",
+        "member_id": "BHP-234567",
+        "group_number": "GRP-456789"
+      },
+      "medical_conditions": [
+        "Generalized Anxiety Disorder",
+        "Asthma (moderate persistent)",
+        "Migraine with aura",
+        "Irritable Bowel Syndrome"
+      ],
+      "medications": [
+        {
+          "name": "Sertraline (Zoloft)",
+          "dosage": "50mg",
+          "frequency": "Once daily",
+          "prescribing_doctor": "Dr. Michael Chen",
+          "start_date": "2022-04-10"
+        },
+        {
+          "name": "Albuterol Inhaler",
+          "dosage": "90 mcg",
+          "frequency": "As needed",
+          "prescribing_doctor": "Dr. Lisa Park",
+          "start_date": "2018-06-15"
+        },
+        {
+          "name": "Fluticasone Propionate",
+          "dosage": "250 mcg",
+          "frequency": "Twice daily",
+          "prescribing_doctor": "Dr. Lisa Park",
+          "start_date": "2020-02-20"
+        },
+        {
+          "name": "Sumatriptan",
+          "dosage": "50mg",
+          "frequency": "As needed for migraines",
+          "prescribing_doctor": "Dr. Rachel Thompson",
+          "start_date": "2021-09-05"
+        }
+      ],
+      "allergies": [
+        "Shellfish (anaphylaxis)",
+        "Peanuts (throat swelling)",
+        "Aspirin (asthma exacerbation)"
+      ],
+      "mental_health_notes": {
+        "treating_psychiatrist": "Dr. Michael Chen",
+        "diagnosis": "Generalized Anxiety Disorder (GAD), Panic Disorder",
+        "therapy": "Cognitive Behavioral Therapy (CBT) - weekly sessions",
+        "hospitalization_history": "Voluntary admission Sept 2021 for panic attacks",
+        "suicide_risk": "Low - stable on current medication",
+        "notes": "Patient reports significant improvement with Sertraline. Therapy ongoing."
+      },
+      "pregnancy_history": [
+        {
+          "date": "2023-01-15",
+          "outcome": "Live birth - healthy female",
+          "delivery_method": "Cesarean section",
+          "complications": "Gestational diabetes (resolved postpartum)"
+        }
+      ],
+      "flag": "FLAG{mental_health_records_exposed}"
+    },
+    {
+      "patient_id": "PAT-2024-003",
+      "medical_record_number": "MRN-345678",
+      "full_name": "David Alan Martinez",
+      "date_of_birth": "1975-12-01",
+      "ssn": "777-88-9999",
+      "gender": "Male",
+      "blood_type": "B-",
+      "contact": {
+        "email": "david.martinez@email.com",
+        "phone": "+61-400-345-678",
+        "emergency_contact": "Maria Martinez (Wife) - +61-400-345-679",
+        "address": {
+          "street": "789 Queen Street",
+          "city": "Brisbane",
+          "state": "QLD",
+          "postcode": "4000",
+          "country": "Australia"
+        }
+      },
+      "insurance": {
+        "provider": "NIB Health Insurance",
+        "policy_number": "NIB-456789012",
+        "member_id": "NIB-345678",
+        "group_number": "GRP-234567"
+      },
+      "medical_conditions": [
+        "HIV Positive (diagnosed 2018)",
+        "Hepatitis C (chronic, treated)",
+        "Major Depressive Disorder",
+        "Substance Use Disorder (in remission)"
+      ],
+      "medications": [
+        {
+          "name": "Biktarvy (Bictegravir/Emtricitabine/Tenofovir)",
+          "dosage": "50/200/25 mg",
+          "frequency": "Once daily",
+          "prescribing_doctor": "Dr. James Wilson (Infectious Disease)",
+          "start_date": "2019-03-20"
+        },
+        {
+          "name": "Escitalopram (Lexapro)",
+          "dosage": "20mg",
+          "frequency": "Once daily",
+          "prescribing_doctor": "Dr. Amanda Foster",
+          "start_date": "2020-07-15"
+        }
+      ],
+      "hiv_treatment_data": {
+        "cd4_count": "650 cells/mm3",
+        "viral_load": "Undetectable (<20 copies/mL)",
+        "last_test_date": "2024-08-15",
+        "treatment_adherence": "Excellent - 100% over past 6 months",
+        "specialist": "Dr. James Wilson",
+        "clinic": "Brisbane Infectious Disease Clinic"
+      },
+      "substance_abuse_history": {
+        "substances": ["Cocaine", "Methamphetamine", "Alcohol"],
+        "treatment": "Completed inpatient rehab program 2019",
+        "sobriety_date": "2019-06-01",
+        "support_groups": "Narcotics Anonymous - attending weekly",
+        "relapse_risk": "Moderate - ongoing monitoring required"
+      },
+      "flag": "FLAG{hiv_status_and_substance_abuse_exposed}"
+    },
+    {
+      "patient_id": "PAT-2024-004",
+      "medical_record_number": "MRN-456789",
+      "full_name": "Jennifer Lynn Anderson",
+      "date_of_birth": "1988-03-10",
+      "ssn": "888-99-0000",
+      "gender": "Female",
+      "blood_type": "AB+",
+      "contact": {
+        "email": "jennifer.anderson@email.com",
+        "phone": "+61-400-456-789",
+        "emergency_contact": "Mark Anderson (Brother) - +61-400-456-790",
+        "address": {
+          "street": "321 Adelaide Street",
+          "city": "Perth",
+          "state": "WA",
+          "postcode": "6000",
+          "country": "Australia"
+        }
+      },
+      "insurance": {
+        "provider": "Medibank Private",
+        "policy_number": "MED-567890123",
+        "member_id": "MPL-456789",
+        "group_number": "GRP-345678"
+      },
+      "medical_conditions": [
+        "Breast Cancer (Stage II, in remission)",
+        "BRCA1 Gene Mutation",
+        "Post-Traumatic Stress Disorder (PTSD)",
+        "Lymphedema (left arm)"
+      ],
+      "cancer_treatment_history": {
+        "diagnosis_date": "2022-05-15",
+        "cancer_type": "Invasive Ductal Carcinoma",
+        "stage": "Stage IIA (T2N0M0)",
+        "treatments": [
+          {
+            "type": "Surgery",
+            "procedure": "Modified Radical Mastectomy (left breast)",
+            "date": "2022-06-20",
+            "surgeon": "Dr. Patricia Collins"
+          },
+          {
+            "type": "Chemotherapy",
+            "regimen": "AC-T (Adriamycin, Cyclophosphamide, Taxol)",
+            "start_date": "2022-08-01",
+            "end_date": "2022-12-15",
+            "oncologist": "Dr. Robert Chang"
+          },
+          {
+            "type": "Radiation Therapy",
+            "sessions": 30,
+            "start_date": "2023-01-10",
+            "end_date": "2023-02-28"
+          },
+          {
+            "type": "Hormone Therapy",
+            "medication": "Tamoxifen 20mg daily",
+            "start_date": "2023-03-01",
+            "duration": "5 years planned"
+          }
+        ],
+        "current_status": "No Evidence of Disease (NED)",
+        "last_mammogram": "2024-09-01",
+        "next_followup": "2025-03-01"
+      },
+      "genetic_testing": {
+        "test_date": "2022-07-10",
+        "results": "BRCA1 Pathogenic Mutation Detected",
+        "variant": "c.5266dupC (p.Gln1756Profs)",
+        "implications": "85% lifetime risk of breast cancer, 40-60% risk of ovarian cancer",
+        "family_counseling": "Family members advised to undergo genetic testing",
+        "prophylactic_recommendations": "Bilateral salpingo-oophorectomy recommended at age 40"
+      },
+      "medications": [
+        {
+          "name": "Tamoxifen",
+          "dosage": "20mg",
+          "frequency": "Once daily",
+          "prescribing_doctor": "Dr. Robert Chang",
+          "start_date": "2023-03-01"
+        },
+        {
+          "name": "Prazosin",
+          "dosage": "2mg",
+          "frequency": "At bedtime for PTSD nightmares",
+          "prescribing_doctor": "Dr. Susan Lee",
+          "start_date": "2023-06-15"
+        }
+      ],
+      "flag": "FLAG{cancer_treatment_and_genetic_data_exposed}"
+    },
+    {
+      "patient_id": "PAT-2024-005",
+      "medical_record_number": "MRN-567890",
+      "full_name": "Michael James Thompson",
+      "date_of_birth": "1965-07-22",
+      "ssn": "999-00-1111",
+      "gender": "Male",
+      "blood_type": "O-",
+      "contact": {
+        "email": "michael.thompson@email.com",
+        "phone": "+61-400-567-890",
+        "emergency_contact": "Carol Thompson (Wife) - +61-400-567-891",
+        "address": {
+          "street": "654 King Street",
+          "city": "Adelaide",
+          "state": "SA",
+          "postcode": "5000",
+          "country": "Australia"
+        }
+      },
+      "insurance": {
+        "provider": "HCF Health Insurance",
+        "policy_number": "HCF-678901234",
+        "member_id": "HCF-567890",
+        "group_number": "GRP-456789"
+      },
+      "medical_conditions": [
+        "End-Stage Renal Disease (ESRD)",
+        "Dialysis dependent",
+        "Coronary Artery Disease",
+        "Congestive Heart Failure (CHF)",
+        "Diabetic Nephropathy"
+      ],
+      "dialysis_information": {
+        "modality": "Hemodialysis",
+        "schedule": "Monday, Wednesday, Friday - 3:30 PM",
+        "duration": "4 hours per session",
+        "access_type": "Arteriovenous Fistula (left arm)",
+        "dialysis_center": "Adelaide Dialysis Center",
+        "nephrologist": "Dr. Karen Mitchell",
+        "start_date": "2020-08-15"
+      },
+      "transplant_status": {
+        "listed": true,
+        "listing_date": "2021-03-10",
+        "blood_type": "O-",
+        "antibodies": "Sensitized (PRA 35%)",
+        "wait_time": "3 years 7 months",
+        "priority_status": "Standard",
+        "coordinator": "Transplant Coordinator: Sarah Johnson - sjohnson@hospital.com"
+      },
+      "medications": [
+        {
+          "name": "Sevelamer Carbonate",
+          "dosage": "800mg",
+          "frequency": "Three times daily with meals",
+          "prescribing_doctor": "Dr. Karen Mitchell",
+          "start_date": "2020-09-01"
+        },
+        {
+          "name": "Carvedilol",
+          "dosage": "25mg",
+          "frequency": "Twice daily",
+          "prescribing_doctor": "Dr. Thomas Baker",
+          "start_date": "2019-04-15"
+        },
+        {
+          "name": "Furosemide",
+          "dosage": "80mg",
+          "frequency": "Twice daily",
+          "prescribing_doctor": "Dr. Karen Mitchell",
+          "start_date": "2020-06-20"
+        },
+        {
+          "name": "Epoetin Alfa",
+          "dosage": "10,000 units",
+          "frequency": "Three times weekly at dialysis",
+          "prescribing_doctor": "Dr. Karen Mitchell",
+          "start_date": "2020-08-15"
+        }
+      ],
+      "cardiac_history": {
+        "procedures": [
+          {
+            "type": "Coronary Angioplasty with Stent Placement",
+            "date": "2018-11-20",
+            "location": "Left Anterior Descending Artery",
+            "cardiologist": "Dr. Thomas Baker"
+          },
+          {
+            "type": "Implantable Cardioverter Defibrillator (ICD)",
+            "date": "2022-03-15",
+            "reason": "Primary prevention of sudden cardiac death",
+            "device": "Medtronic ICD Model XYZ-123"
+          }
+        ],
+        "ejection_fraction": "30% (severely reduced)",
+        "last_echo": "2024-07-15"
+      },
+      "lab_results_recent": {
+        "date": "2024-10-01",
+        "pre_dialysis": {
+          "creatinine": "8.5 mg/dL",
+          "bun": "72 mg/dL",
+          "potassium": "5.8 mEq/L",
+          "phosphorus": "6.2 mg/dL",
+          "calcium": "8.5 mg/dL",
+          "hemoglobin": "10.2 g/dL"
+        }
+      },
+      "flag": "FLAG{dialysis_and_transplant_data_exposed}"
+    }
+  ],
+  "database_credentials": {
+    "note": "Database connection info for patient records system",
+    "host": "phi-database.ctf-training.internal",
+    "port": 5432,
+    "database": "patient_records",
+    "username": "phi_admin",
+    "password": "PatientData!2024",
+    "connection_string": "postgresql://phi_admin:PatientData!2024@phi-database.ctf-training.internal:5432/patient_records",
+    "flag": "FLAG{database_credentials_in_phi_json}"
+  },
+  "api_access": {
+    "ehr_system": "Epic MyChart API",
+    "api_key": "epic_api_key_1234567890abcdefghijklmn",
+    "api_secret": "epic_secret_9876543210zyxwvutsrqponm",
+    "endpoint": "https://api.mychart.epic.com/v1/",
+    "flag": "FLAG{ehr_api_credentials_in_patient_file}"
+  }
+}

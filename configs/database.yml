@@ -1,0 +1,53 @@
+# CTF Training - Intentionally Vulnerable Configuration
+# WARNING: Contains cleartext credentials for training purposes only
+
+development:
+  database: ctf_training_dev
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: dev-db.ctf-training.internal
+  port: 5432
+  username: dev_admin
+  password: DevP@ssw0rd123!
+  # FLAG{database_yml_cleartext_creds}
+
+staging:
+  database: ctf_training_staging
+  adapter: mysql
+  host: staging-db.ctf-training.internal
+  port: 3306
+  username: staging_user
+  password: StagingPass2024!
+  socket: /tmp/mysql.sock
+  # FLAG{staging_db_exposed}
+
+production:
+  database: ctf_training_prod
+  adapter: postgresql
+  host: prod-db-01.ctf-training.internal
+  port: 5432
+  username: prod_admin
+  password: ProdAdm1n!SecretP@ss
+  sslmode: disable
+  connection_timeout: 30
+  # FLAG{production_db_credentials_leaked}
+  # CRITICAL: No SSL, cleartext password
+
+backup:
+  database: ctf_backups
+  host: backup-db.aws-region.rds.amazonaws.com
+  port: 5432
+  username: backup_admin
+  password: BackupMasterKey2024!@#
+  # FLAG{backup_db_master_password}
+
+analytics:
+  adapter: mongodb
+  host: analytics-cluster.ctf-training.internal
+  port: 27017
+  database: analytics_db
+  username: analytics_read
+  password: Analytics123Read
+  auth_source: admin
+  # FLAG{mongodb_connection_string}

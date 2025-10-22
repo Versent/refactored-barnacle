@@ -1,0 +1,184 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ctf-data-loader
+  namespace: payment-processing
+  annotations:
+    flag: "FLAG{data_loader_service_account}"
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: ctf-data-loader-role
+  namespace: payment-processing
+  annotations:
+    vulnerability: "Service account can read all secrets"
+    flag: "FLAG{data_loader_can_read_secrets}"
+rules:
+- apiGroups: [""]
+  resources: ["secrets", "configmaps"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: [""]
+  resources: ["pods", "pods/log"]
+  verbs: ["get", "list"]
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: ctf-data-loader-binding
+  namespace: payment-processing
+subjects:
+- kind: ServiceAccount
+  name: ctf-data-loader
+  namespace: payment-processing
+roleRef:
+  kind: Role
+  name: ctf-data-loader-role
+  apiGroup: rbac.authorization.k8s.io
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ctf-data-loader
+  namespace: payment-processing
+  annotations:
+    description: "Loads CTF training data with embedded secrets"
+    flag: "FLAG{k8s_job_loads_sensitive_data}"
+spec:
+  template:
+    metadata:
+      labels:
+        app: ctf-data-loader
+    spec:
+      serviceAccountName: ctf-data-loader
+      restartPolicy: OnFailure
+      
+      initContainers:
+      - name: download-data
+        image: alpine:latest
+        command: ["/bin/sh", "-c"]
+        args:
+          - |
+            echo "Downloading training data from S3..."
+            apk add --no-cache aws-cli
+            
+            # AWS credentials hardcoded (intentional vulnerability)
+            export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
+            export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+            export AWS_DEFAULT_REGION=ap-southeast-2
+            # FLAG{init_container_hardcoded_aws_creds}
+            
+            # Download data files
+            aws s3 sync s3://ctf-training-data/ /data/
+            
+            echo "Data downloaded successfully"
+        volumeMounts:
+        - name: data-volume
+          mountPath: /data
+      
+      containers:
+      - name: load-data
+        image: postgres:14
+        command: ["/bin/bash", "-c"]
+        args:
+          - |
+            echo "Loading CTF training data..."
+            
+            # Database credentials from environment (cleartext)
+            export PGPASSWORD="ProdAdm1n!SecretP@ss"
+            # FLAG{postgres_password_in_script}
+            
+            # Connect and load data
+            psql -h prod-db.ctf-training.internal \
+                 -U prod_admin \
+                 -d ctf_training_prod \
+                 -f /data/seed-database.sql
+            
+            echo "Data loaded successfully"
+            
+            # Log credentials (bad practice)
+            echo "Database: prod-db.ctf-training.internal" >> /logs/load.log
+            echo "Username: prod_admin" >> /logs/load.log
+            echo "Password: ProdAdm1n!SecretP@ss" >> /logs/load.log
+            # FLAG{credentials_logged_in_container}
+            
+            sleep 30
+        env:
+        - name: DB_HOST
+          value: "prod-db.ctf-training.internal"
+        - name: DB_USER
+          value: "prod_admin"
+        - name: DB_PASSWORD
+          value: "ProdAdm1n!SecretP@ss"
+          # FLAG{db_password_in_pod_env}
+        - name: DB_NAME
+          value: "ctf_training_prod"
+        - name: AWS_ACCESS_KEY_ID
+          value: "AKIAIOSFODNN7EXAMPLE"
+        - name: AWS_SECRET_ACCESS_KEY
+          value: "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+          # FLAG{aws_keys_in_pod_env}
+        volumeMounts:
+        - name: data-volume
+          mountPath: /data
+        - name: log-volume
+          mountPath: /logs
+        - name: config-volume
+          mountPath: /config
+        - name: credentials-volume
+          mountPath: /credentials
+      
+      volumes:
+      - name: data-volume
+        emptyDir: {}
+      - name: log-volume
+        emptyDir: {}
+      - name: config-volume
+        configMap:
+          name: ctf-app-config
+      - name: credentials-volume
+        configMap:
+          name: ctf-credentials
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ctf-debug-pod
+  namespace: payment-processing
+  annotations:
+    description: "Debug pod with access to all secrets"
+    flag: "FLAG{debug_pod_with_secret_access}"
+spec:
+  serviceAccountName: ctf-data-loader
+  containers:
+  - name: debug
+    image: alpine:latest
+    command: ["/bin/sh", "-c", "sleep 3600"]
+    env:
+    - name: DATABASE_URL
+      value: "postgresql://prod_admin:ProdAdm1n!SecretP@ss@prod-db.ctf-training.internal:5432/ctf_training_prod"
+    - name: REDIS_URL
+      value: "redis://default:RedisCacheSecret123!@cache-redis.ctf-training.internal:6379/0"
+    - name: AWS_ACCESS_KEY_ID
+      value: "AKIAIOSFODNN7EXAMPLE"
+    - name: AWS_SECRET_ACCESS_KEY
+      value: "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+    - name: STRIPE_SECRET_KEY
+      value: "sk_live_51HqmKH2eZvKYlo2C0FqKfdTs"
+    # FLAG{debug_pod_all_credentials_env}
+    volumeMounts:
+    - name: all-configs
+      mountPath: /configs
+    - name: all-credentials
+      mountPath: /credentials
+  volumes:
+  - name: all-configs
+    configMap:
+      name: ctf-app-config
+  - name: all-credentials
+    configMap:
+      name: ctf-credentials

@@ -18,3 +18,498 @@
         <APIEndpoint>https://ehr-api.ctf-training.internal/v1/</APIEndpoint>
         <APIKey>ehr_api_master_key_abcdefgh123456789</APIKey>
         <APISecret>ehr
+
+        <APISecret>ehr_api_secret_zyxwvut987654321</APISecret>
+        <Flag>FLAG{database_config_in_xml_export}</Flag>
+    </DatabaseConfiguration>
+    
+    <Patients>
+        <Patient>
+            <PatientID>PAT-2024-006</PatientID>
+            <MedicalRecordNumber>MRN-678901</MedicalRecordNumber>
+            <Demographics>
+                <FullName>Linda Marie Roberts</FullName>
+                <DateOfBirth>1970-11-25</DateOfBirth>
+                <SSN>123-45-6789</SSN>
+                <Gender>Female</Gender>
+                <Ethnicity>Caucasian</Ethnicity>
+                <MaritalStatus>Divorced</MaritalStatus>
+                <PreferredLanguage>English</PreferredLanguage>
+            </Demographics>
+            <ContactInformation>
+                <PrimaryPhone>+61-400-678-901</PrimaryPhone>
+                <Email>linda.roberts@email.com</Email>
+                <Address>
+                    <Street>987 Elizabeth Street</Street>
+                    <City>Hobart</City>
+                    <State>TAS</State>
+                    <Postcode>7000</Postcode>
+                    <Country>Australia</Country>
+                </Address>
+                <EmergencyContact>
+                    <Name>Susan Roberts</Name>
+                    <Relationship>Sister</Relationship>
+                    <Phone>+61-400-678-902</Phone>
+                </EmergencyContact>
+            </ContactInformation>
+            <Insurance>
+                <Provider>Medicare Australia</Provider>
+                <PolicyNumber>3234567890</PolicyNumber>
+                <MemberID>MCARE-678901</MemberID>
+                <GroupNumber>GRP-789012</GroupNumber>
+            </Insurance>
+            <MedicalHistory>
+                <Diagnosis code="F32.9">Major Depressive Disorder, single episode</Diagnosis>
+                <Diagnosis code="E66.9">Obesity, unspecified</Diagnosis>
+                <Diagnosis code="M79.3">Fibromyalgia</Diagnosis>
+                <Diagnosis code="G43.909">Migraine, unspecified</Diagnosis>
+            </MedicalHistory>
+            <Medications>
+                <Medication>
+                    <Name>Venlafaxine XR</Name>
+                    <Dosage>150mg</Dosage>
+                    <Frequency>Once daily</Frequency>
+                    <Prescriber>Dr. Robert Anderson</Prescriber>
+                    <StartDate>2023-04-15</StartDate>
+                    <Purpose>Major Depression</Purpose>
+                </Medication>
+                <Medication>
+                    <Name>Topiramate</Name>
+                    <Dosage>100mg</Dosage>
+                    <Frequency>Twice daily</Frequency>
+                    <Prescriber>Dr. Rachel Thompson</Prescriber>
+                    <StartDate>2023-08-10</StartDate>
+                    <Purpose>Migraine prophylaxis, weight management</Purpose>
+                </Medication>
+                <Medication>
+                    <Name>Gabapentin</Name>
+                    <Dosage>600mg</Dosage>
+                    <Frequency>Three times daily</Frequency>
+                    <Prescriber>Dr. Mark Stevens</Prescriber>
+                    <StartDate>2022-11-20</StartDate>
+                    <Purpose>Fibromyalgia pain management</Purpose>
+                </Medication>
+            </Medications>
+            <Allergies>
+                <Allergy>
+                    <Allergen>Codeine</Allergen>
+                    <Reaction>Severe nausea and vomiting</Reaction>
+                    <Severity>Moderate</Severity>
+                </Allergy>
+                <Allergy>
+                    <Allergen>NSAIDs (Ibuprofen, Naproxen)</Allergen>
+                    <Reaction>Gastric bleeding</Reaction>
+                    <Severity>High</Severity>
+                </Allergy>
+            </Allergies>
+            <SocialHistory>
+                <SmokingStatus>Former smoker - quit 2015</SmokingStatus>
+                <AlcoholUse>Social drinker - 2-3 drinks per week</AlcoholUse>
+                <Employment>Unemployed - disability benefits</Employment>
+                <LivingSituation>Lives alone</LivingSituation>
+            </SocialHistory>
+            <PsychiatricNotes>
+                <Note date="2024-09-05">
+                    <Provider>Dr. Robert Anderson - Psychiatrist</Provider>
+                    <SessionType>Medication Management</SessionType>
+                    <Content>Patient reports ongoing depressive symptoms despite Venlafaxine 150mg. Discussed increasing dose to 225mg. Patient declined. Reports passive suicidal ideation without plan or intent. Safety contract established. Follow-up in 2 weeks.</Content>
+                    <RiskAssessment>Moderate suicide risk - close monitoring required</RiskAssessment>
+                </Note>
+            </PsychiatricNotes>
+            <Flag>FLAG{psychiatric_records_with_suicide_risk}</Flag>
+        </Patient>
+        
+        <Patient>
+            <PatientID>PAT-2024-007</PatientID>
+            <MedicalRecordNumber>MRN-789012</MedicalRecordNumber>
+            <Demographics>
+                <FullName>Carlos Eduardo Silva</FullName>
+                <DateOfBirth>1995-06-18</DateOfBirth>
+                <SSN>234-56-7890</SSN>
+                <Gender>Male</Gender>
+                <Ethnicity>Hispanic/Latino</Ethnicity>
+                <MaritalStatus>Single</MaritalStatus>
+                <PreferredLanguage>Spanish (English proficient)</PreferredLanguage>
+            </Demographics>
+            <ContactInformation>
+                <PrimaryPhone>+61-400-789-012</PrimaryPhone>
+                <Email>carlos.silva@email.com</Email>
+                <Address>
+                    <Street>159 Bourke Street</Street>
+                    <City>Melbourne</City>
+                    <State>VIC</State>
+                    <Postcode>3000</Postcode>
+                    <Country>Australia</Country>
+                </Address>
+                <EmergencyContact>
+                    <Name>Rosa Silva</Name>
+                    <Relationship>Mother</Relationship>
+                    <Phone>+61-400-789-013</Phone>
+                </EmergencyContact>
+            </ContactInformation>
+            <Insurance>
+                <Provider>Bupa Health Insurance</Provider>
+                <PolicyNumber>BUPA-123456789</PolicyNumber>
+                <MemberID>BHP-789012</MemberID>
+                <GroupNumber>GRP-890123</GroupNumber>
+            </Insurance>
+            <SexualHealthHistory>
+                <STIScreeningDate>2024-08-15</STIScreeningDate>
+                <STIResults>
+                    <Test name="HIV">Positive - newly diagnosed</Test>
+                    <Test name="Syphilis">Negative</Test>
+                    <Test name="Gonorrhea">Positive - treated with Ceftriaxone 500mg IM</Test>
+                    <Test name="Chlamydia">Positive - treated with Azithromycin 1g PO</Test>
+                    <Test name="Hepatitis B">Negative - vaccinated</Test>
+                    <Test name="Hepatitis C">Negative</Test>
+                </STIResults>
+                <SexualOrientation>Gay/Homosexual</SexualOrientation>
+                <NumberOfPartners>Multiple partners in past 6 months</NumberOfPartners>
+                <PrEPStatus>Not on PrEP at time of diagnosis</PrEPStatus>
+            </SexualHealthHistory>
+            <HIVTreatment>
+                <DiagnosisDate>2024-08-15</DiagnosisDate>
+                <InitialCD4>285 cells/mm3</InitialCD4>
+                <InitialViralLoad>125,000 copies/mL</InitialViralLoad>
+                <ARTRegimen>Biktarvy (Bictegravir/Emtricitabine/Tenofovir) 50/200/25mg once daily</ARTRegimen>
+                <ARTStartDate>2024-08-20</ARTStartDate>
+                <InfectiousDiseaseSpecialist>Dr. James Wilson</InfectiousDiseaseSpecialist>
+                <Clinic>Melbourne HIV Clinic</Clinic>
+                <PartnerNotification>Public health contacted - 3 partners notified</PartnerNotification>
+                <CounselingProvided>Yes - psychological support, safe sex education, stigma counseling</CounselingProvided>
+            </HIVTreatment>
+            <PsychologicalImpact>
+                <Note>Patient reports significant distress related to new HIV diagnosis. Referred to HIV support group. Risk of depression and anxiety - monitoring required.</Note>
+            </PsychologicalImpact>
+            <Flag>FLAG{hiv_diagnosis_and_sti_results}</Flag>
+        </Patient>
+        
+        <Patient>
+            <PatientID>PAT-2024-008</PatientID>
+            <MedicalRecordNumber>MRN-890123</MedicalRecordNumber>
+            <Demographics>
+                <FullName>Sophia Grace Wilson</FullName>
+                <DateOfBirth>2010-04-12</DateOfBirth>
+                <SSN>345-67-8901</SSN>
+                <Gender>Female</Gender>
+                <Ethnicity>Caucasian</Ethnicity>
+                <MaritalStatus>Minor</MaritalStatus>
+                <PreferredLanguage>English</PreferredLanguage>
+            </Demographics>
+            <ContactInformation>
+                <PrimaryPhone>+61-400-890-123 (Mother's phone)</PrimaryPhone>
+                <Email>parent.wilson@email.com</Email>
+                <Address>
+                    <Street>753 William Street</Street>
+                    <City>Sydney</City>
+                    <State>NSW</State>
+                    <Postcode>2000</Postcode>
+                    <Country>Australia</Country>
+                </Address>
+                <Guardian>
+                    <Name>Rebecca Wilson</Name>
+                    <Relationship>Mother</Relationship>
+                    <Phone>+61-400-890-123</Phone>
+                </Guardian>
+            </ContactInformation>
+            <Insurance>
+                <Provider>Medicare Australia</Provider>
+                <PolicyNumber>4345678901</PolicyNumber>
+                <MemberID>MCARE-890123</MemberID>
+                <GuardianName>Rebecca Wilson</GuardianName>
+            </Insurance>
+            <PediatricHistory>
+                <Diagnosis code="F84.0">Autism Spectrum Disorder</Diagnosis>
+                <Diagnosis code="F90.2">Attention-Deficit/Hyperactivity Disorder (ADHD), combined type</Diagnosis>
+                <Diagnosis code="F94.0">Selective Mutism</Diagnosis>
+                <Diagnosis code="F80.9">Developmental disorder of speech and language</Diagnosis>
+            </PediatricHistory>
+            <DevelopmentalHistory>
+                <Milestones>
+                    <SpeechDelay>First words at 28 months (delayed)</SpeechDelay>
+                    <MotorSkills>Walked at 15 months (normal)</MotorSkills>
+                    <SocialSkills>Limited eye contact, difficulty with peer relationships</SocialSkills>
+                    <CognitiveFunction>IQ testing: 92 (average range with significant scatter)</CognitiveFunction>
+                </Milestones>
+            </DevelopmentalHistory>
+            <EducationalPlan>
+                <SchoolType>Mainstream school with special education support</SchoolType>
+                <IEP>Individualized Education Plan in place</IEP>
+                <Accommodations>
+                    <Accommodation>Extra time for assignments and tests</Accommodation>
+                    <Accommodation>Sensory breaks as needed</Accommodation>
+                    <Accommodation>Visual schedule and social stories</Accommodation>
+                    <Accommodation>Speech therapy 2x/week</Accommodation>
+                    <Accommodation>Occupational therapy 1x/week</Accommodation>
+                </Accommodations>
+            </EducationalPlan>
+            <Medications>
+                <Medication>
+                    <Name>Methylphenidate ER</Name>
+                    <Dosage>18mg</Dosage>
+                    <Frequency>Once daily in morning</Frequency>
+                    <Prescriber>Dr. Pediatric Psychiatrist Sarah Lee</Prescriber>
+                    <StartDate>2023-02-10</StartDate>
+                    <Purpose>ADHD management</Purpose>
+                    <Notes>Helps with focus and attention in school setting</Notes>
+                </Medication>
+            </Medications>
+            <BehavioralInterventions>
+                <ABATherapy>Applied Behavior Analysis - 15 hours per week</ABATherapy>
+                <SpeechTherapy>Language development and social communication - 2 sessions/week</SpeechTherapy>
+                <OccupationalTherapy>Sensory integration - 1 session/week</OccupationalTherapy>
+            </BehavioralInterventions>
+            <Flag>FLAG{pediatric_autism_and_developmental_records}</Flag>
+        </Patient>
+        
+        <Patient>
+            <PatientID>PAT-2024-009</PatientID>
+            <MedicalRecordNumber>MRN-901234</MedicalRecordNumber>
+            <Demographics>
+                <FullName>Ahmed Hassan Al-Rashid</FullName>
+                <DateOfBirth>1982-09-30</DateOfBirth>
+                <SSN>456-78-9012</SSN>
+                <Gender>Male</Gender>
+                <Ethnicity>Middle Eastern</Ethnicity>
+                <MaritalStatus>Married</MaritalStatus>
+                <PreferredLanguage>Arabic (English proficient)</PreferredLanguage>
+                <Religion>Islam</Religion>
+            </Demographics>
+            <ContactInformation>
+                <PrimaryPhone>+61-400-901-234</PrimaryPhone>
+                <Email>ahmed.alrashid@email.com</Email>
+                <Address>
+                    <Street>246 Swanston Street</Street>
+                    <City>Melbourne</City>
+                    <State>VIC</State>
+                    <Postcode>3000</Postcode>
+                    <Country>Australia</Country>
+                </Address>
+                <EmergencyContact>
+                    <Name>Fatima Al-Rashid</Name>
+                    <Relationship>Wife</Relationship>
+                    <Phone>+61-400-901-235</Phone>
+                </EmergencyContact>
+            </ContactInformation>
+            <Insurance>
+                <Provider>NIB Health Insurance</Provider>
+                <PolicyNumber>NIB-789012345</PolicyNumber>
+                <MemberID>NIB-901234</MemberID>
+                <GroupNumber>GRP-901234</GroupNumber>
+            </Insurance>
+            <MedicalHistory>
+                <Diagnosis code="F43.10">Post-Traumatic Stress Disorder (PTSD)</Diagnosis>
+                <Diagnosis code="F41.1">Generalized Anxiety Disorder</Diagnosis>
+                <Diagnosis code="F32.2">Major Depressive Disorder, single episode, severe</Diagnosis>
+                <Diagnosis code="Z65.5">Exposure to disaster, war and other hostilities (refugee status)</Diagnosis>
+            </MedicalHistory>
+            <RefugeeHealthScreening>
+                <ArrivalDate>2019-11-15</ArrivalDate>
+                <CountryOfOrigin>Syria</CountryOfOrigin>
+                <RefugeeStatus>Confirmed - arrived through UN refugee program</RefugeeStatus>
+                <TraumaHistory>
+                    <Event>Witnessed violent conflict in home country</Event>
+                    <Event>Loss of family members in war</Event>
+                    <Event>Prolonged displacement in refugee camp (3 years)</Event>
+                    <Event>Separation from extended family</Event>
+                </TraumaHistory>
+                <ScreeningResults>
+                    <Test name="Tuberculosis">Positive - Latent TB, completed INH treatment 2020</Test>
+                    <Test name="Hepatitis B">Positive - Chronic HBV carrier</Test>
+                    <Test name="Hepatitis C">Negative</Test>
+                    <Test name="HIV">Negative</Test>
+                    <Test name="Parasites">Treated for intestinal parasites 2019</Test>
+                </ScreeningResults>
+            </RefugeeHealthScreening>
+            <MentalHealthTreatment>
+                <Therapist>Dr. Cultural Psychiatrist Maria Santos</Therapist>
+                <TherapyType>Trauma-focused Cognitive Behavioral Therapy</TherapyType>
+                <Frequency>Weekly sessions</Frequency>
+                <Interpreter>Arabic interpreter present for all sessions</Interpreter>
+                <CulturalConsiderations>Islamic religious practices respected. Prayer times accommodated. Halal dietary restrictions noted.</CulturalConsiderations>
+                <PTSDSymptoms>
+                    <Symptom>Intrusive memories and nightmares</Symptom>
+                    <Symptom>Avoidance of trauma reminders</Symptom>
+                    <Symptom>Hypervigilance and exaggerated startle response</Symptom>
+                    <Symptom>Sleep disturbances</Symptom>
+                    <Symptom>Difficulty concentrating</Symptom>
+                </PTSDSymptoms>
+            </MentalHealthTreatment>
+            <Medications>
+                <Medication>
+                    <Name>Sertraline</Name>
+                    <Dosage>200mg</Dosage>
+                    <Frequency>Once daily</Frequency>
+                    <Prescriber>Dr. Maria Santos</Prescriber>
+                    <StartDate>2020-03-15</StartDate>
+                    <Purpose>PTSD and Depression</Purpose>
+                </Medication>
+                <Medication>
+                    <Name>Prazosin</Name>
+                    <Dosage>5mg</Dosage>
+                    <Frequency>At bedtime</Frequency>
+                    <Prescriber>Dr. Maria Santos</Prescriber>
+                    <StartDate>2020-06-10</StartDate>
+                    <Purpose>PTSD nightmares</Purpose>
+                </Medication>
+                <Medication>
+                    <Name>Tenofovir</Name>
+                    <Dosage>300mg</Dosage>
+                    <Frequency>Once daily</Frequency>
+                    <Prescriber>Dr. Hepatology Specialist</Prescriber>
+                    <StartDate>2021-01-05</StartDate>
+                    <Purpose>Chronic Hepatitis B management</Purpose>
+                </Medication>
+            </Medications>
+            <SocialSupport>
+                <CaseManager>Refugee Resettlement Services - Maria Rodriguez</CaseManager>
+                <CommunitySupport>Connected to local mosque community</CommunitySupport>
+                <EmploymentStatus>Employed part-time - warehouse worker</EmploymentStatus>
+                <EnglishProficiency>Intermediate - attending ESL classes</EnglishProficiency>
+            </SocialSupport>
+            <Flag>FLAG{refugee_trauma_and_hepatitis_b_carrier}</Flag>
+        </Patient>
+        
+        <Patient>
+            <PatientID>PAT-2024-010</PatientID>
+            <MedicalRecordNumber>MRN-012345</MedicalRecordNumber>
+            <Demographics>
+                <FullName>Patricia Ann McDonald</FullName>
+                <DateOfBirth>1952-02-14</DateOfBirth>
+                <SSN>567-89-0123</SSN>
+                <Gender>Female</Gender>
+                <Ethnicity>Caucasian</Ethnicity>
+                <MaritalStatus>Widowed</MaritalStatus>
+                <PreferredLanguage>English</PreferredLanguage>
+            </Demographics>
+            <ContactInformation>
+                <PrimaryPhone>+61-400-012-345</PrimaryPhone>
+                <Email>patricia.mcdonald@email.com</Email>
+                <Address>
+                    <Street>852 King William Street</Street>
+                    <City>Adelaide</City>
+                    <State>SA</State>
+                    <Postcode>5000</Postcode>
+                    <Country>Australia</Country>
+                </Address>
+                <EmergencyContact>
+                    <Name>Jennifer McDonald</Name>
+                    <Relationship>Daughter</Relationship>
+                    <Phone>+61-400-012-346</Phone>
+                </EmergencyContact>
+            </ContactInformation>
+            <Insurance>
+                <Provider>HCF Health Insurance</Provider>
+                <PolicyNumber>HCF-890123456</PolicyNumber>
+                <MemberID>HCF-012345</MemberID>
+                <GroupNumber>GRP-012345</GroupNumber>
+            </Insurance>
+            <MedicalHistory>
+                <Diagnosis code="G30.9">Alzheimer's disease, unspecified</Diagnosis>
+                <Diagnosis code="F02.81">Dementia in Alzheimer's disease with behavioral disturbance</Diagnosis>
+                <Diagnosis code="I10">Essential hypertension</Diagnosis>
+                <Diagnosis code="E78.5">Hyperlipidemia</Diagnosis>
+                <Diagnosis code="M81.0">Osteoporosis</Diagnosis>
+            </MedicalHistory>
+            <AlzheimersProgression>
+                <DiagnosisDate>2020-07-20</DiagnosisDate>
+                <Stage>Moderate - Stage 5 on Global Deterioration Scale</Stage>
+                <CognitiveAssessment>
+                    <MMSEScore>15/30 (moderate cognitive impairment)</MMSEScore>
+                    <MoCAScore>11/30</MoCAScore>
+                    <LastAssessment>2024-08-10</LastAssessment>
+                </CognitiveAssessment>
+                <FunctionalStatus>
+                    <ADLs>Requires assistance with bathing, dressing, meal preparation</ADLs>
+                    <IADLs>Unable to manage finances, medications, shopping independently</IADLs>
+                    <Mobility>Ambulatory with walker</Mobility>
+                    <Continence>Occasional urinary incontinence</Continence>
+                </FunctionalStatus>
+                <BehavioralSymptoms>
+                    <Symptom>Agitation and aggression - especially in late afternoon (sundowning)</Symptom>
+                    <Symptom>Wandering behavior - exit-seeking</Symptom>
+                    <Symptom>Sleep disturbances - frequent nighttime awakening</Symptom>
+                    <Symptom>Paranoia and accusations of theft</Symptom>
+                    <Symptom>Resistance to care</Symptom>
+                </BehavioralSymptoms>
+            </AlzheimersProgression>
+            <Medications>
+                <Medication>
+                    <Name>Donepezil (Aricept)</Name>
+                    <Dosage>10mg</Dosage>
+                    <Frequency>Once daily at bedtime</Frequency>
+                    <Prescriber>Dr. Neurologist David Chang</Prescriber>
+                    <StartDate>2020-08-15</StartDate>
+                    <Purpose>Alzheimer's disease - cognitive symptoms</Purpose>
+                </Medication>
+                <Medication>
+                    <Name>Memantine (Namenda)</Name>
+                    <Dosage>10mg</Dosage>
+                    <Frequency>Twice daily</Frequency>
+                    <Prescriber>Dr. David Chang</Prescriber>
+                    <StartDate>2022-03-20</StartDate>
+                    <Purpose>Moderate to severe Alzheimer's disease</Purpose>
+                </Medication>
+                <Medication>
+                    <Name>Quetiapine (Seroquel)</Name>
+                    <Dosage>25mg</Dosage>
+                    <Frequency>Twice daily (higher dose at bedtime)</Frequency>
+                    <Prescriber>Dr. Geriatric Psychiatrist Lisa Chen</Prescriber>
+                    <StartDate>2023-06-10</StartDate>
+                    <Purpose>Agitation, aggression, sleep disturbances</Purpose>
+                    <Warning>BLACK BOX WARNING - Increased mortality in elderly with dementia-related psychosis</Warning>
+                </Medication>
+            </Medications>
+            <CaregiverInformation>
+                <PrimaryCaregiverName>Jennifer McDonald (Daughter)</PrimaryCaregiverName>
+                <CaregiverBurden>Moderate to High - caregiver stress and burnout</CaregiverBurden>
+                <CaregiverSupport>Attending Alzheimer's support group monthly</CaregiverSupport>
+                <RespiteCare>Home health aide 20 hours/week</RespiteCare>
+                <FuturePlanning>Advanced directives in place. DNR order. Considering memory care facility placement.</FuturePlanning>
+            </CaregiverInformation>
+            <AdvancedDirectives>
+                <LivingWill>Yes - on file</LivingWill>
+                <HealthcarePOA>Jennifer McDonald (Daughter)</HealthcarePOA>
+                <DNRStatus>Do Not Resuscitate (DNR)</DNRStatus>
+                <DNIStatus>Do Not Intubate (DNI)</DNIStatus>
+                <ArtificialNutrition>Declined</ArtificialNutrition>
+            </AdvancedDirectives>
+            <Flag>FLAG{alzheimers_dementia_end_of_life_planning}</Flag>
+        </Patient>
+    </Patients>
+    
+    <SystemCredentials>
+        <PrimaryDatabase>
+            <Host>phi-database.ctf-training.internal</Host>
+            <Port>5432</Port>
+            <Database>patient_records</Database>
+            <Username>phi_admin</Username>
+            <Password>PatientData!2024</Password>
+            <SSLMode>disable</SSLMode>
+            <ConnectionString>postgresql://phi_admin:PatientData!2024@phi-database.ctf-training.internal:5432/patient_records?sslmode=disable</ConnectionString>
+        </PrimaryDatabase>
+        <BackupDatabase>
+            <Host>phi-backup.ctf-training.internal</Host>
+            <Port>5432</Port>
+            <Database>patient_records_backup</Database>
+            <Username>backup_user</Username>
+            <Password>BackupPHI!2024</Password>
+            <ConnectionString>postgresql://backup_user:BackupPHI!2024@phi-backup.ctf-training.internal:5432/patient_records_backup</ConnectionString>
+        </BackupDatabase>
+        <APICredentials>
+            <Endpoint>https://ehr-api.ctf-training.internal/v1/</Endpoint>
+            <APIKey>ehr_api_master_key_abcdefgh123456789</APIKey>
+            <APISecret>ehr_api_secret_zyxwvut987654321</APISecret>
+            <OAuthClientID>ehr_oauth_client_1234567890</OAuthClientID>
+            <OAuthClientSecret>ehr_oauth_secret_0987654321abcdefghij</OAuthClientSecret>
+        </APICredentials>
+        <Flag>FLAG{complete_system_credentials_in_xml}</Flag>
+    </SystemCredentials>
+    
+    <ComplianceNotes>
+        <Note>This export contains Protected Health Information (PHI) subject to HIPAA regulations.</Note>
+        <Note>Unauthorized access, use, or disclosure may result in civil and criminal penalties.</Note>
+        <Note>This is TRAINING DATA ONLY - all patient information is manufactured for educational purposes.</Note>
+        <Note>FLAG{hipaa_regulated_data_export}</Note>
+    </ComplianceNotes>
+</HealthcareDataExport>

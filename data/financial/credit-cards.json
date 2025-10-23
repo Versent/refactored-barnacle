@@ -1,0 +1,348 @@
+{
+  "card_database": "Credit Card Vault",
+  "classification": "Payment Card Industry (PCI) Data",
+  "warning": "PCI-DSS Regulated - Training Data Only",
+  "export_date": "2024-10-20T14:30:00Z",
+  "total_cards": 25,
+  "database_info": {
+    "connection_string": "postgresql://cardvault_admin:CardVault!2024@card-db.ctf-training.internal:5432/card_vault",
+    "encryption": "None - Cleartext Storage",
+    "backup_location": "s3://ctf-card-backups/vault/",
+    "aws_credentials": {
+      "access_key": "AKIACARDVAULT123456",
+      "secret_key": "CardVaultSecretKey!2024/abcdefghijklmnop"
+    },
+    "flag": "FLAG{pci_database_credentials_in_json}"
+  },
+  "cards": [
+    {
+      "card_id": "CARD-00001",
+      "cardholder": {
+        "full_name": "JOHN MICHAEL SMITH",
+        "ssn": "555-12-3456",
+        "date_of_birth": "1980-05-15",
+        "email": "john.smith@email.com",
+        "phone": "+61-400-123-456",
+        "billing_address": {
+          "street": "123 Market Street",
+          "city": "Sydney",
+          "state": "NSW",
+          "postcode": "2000",
+          "country": "Australia"
+        },
+        "income": "$125,000 annually",
+        "credit_score": 750
+      },
+      "card_details": {
+        "card_number": "4532123456789012",
+        "card_type": "Visa",
+        "card_brand": "Visa Signature",
+        "cvv": "123",
+        "cvv2": "123",
+        "expiration_month": "12",
+        "expiration_year": "2026",
+        "issue_date": "12/2022",
+        "security_code": "123"
+      },
+      "account": {
+        "account_number": "4532-1234-5678-9012",
+        "routing_number": "063-000",
+        "bank_name": "Commonwealth Bank Australia",
+        "account_type": "Credit Card",
+        "credit_limit": "$25,000",
+        "current_balance": "$8,543.21",
+        "available_credit": "$16,456.79",
+        "minimum_payment": "$256.30",
+        "due_date": "2024-11-05",
+        "apr": "18.99%"
+      },
+      "online_banking": {
+        "username": "jsmith123",
+        "password": "JohnSmith!2024",
+        "security_questions": [
+          {
+            "question": "Mother's maiden name?",
+            "answer": "Johnson"
+          },
+          {
+            "question": "First pet's name?",
+            "answer": "Max"
+          }
+        ],
+        "pin": "1234"
+      },
+      "flag": "FLAG{complete_credit_card_profile_exposed}"
+    },
+    {
+      "card_id": "CARD-00002",
+      "cardholder": {
+        "full_name": "SARAH JANE WILLIAMS",
+        "ssn": "666-77-8888",
+        "date_of_birth": "1992-08-20",
+        "email": "sarah.williams@email.com",
+        "phone": "+61-400-234-567",
+        "billing_address": {
+          "street": "456 Collins Street",
+          "city": "Melbourne",
+          "state": "VIC",
+          "postcode": "3000",
+          "country": "Australia"
+        },
+        "income": "$85,000 annually",
+        "credit_score": 720
+      },
+      "card_details": {
+        "card_number": "5412345678901234",
+        "card_type": "Mastercard",
+        "card_brand": "Mastercard World Elite",
+        "cvv": "456",
+        "cvv2": "456",
+        "expiration_month": "03",
+        "expiration_year": "2027",
+        "issue_date": "03/2023",
+        "magnetic_stripe_data": "%B5412345678901234^WILLIAMS/SARAH^2703101000000000000000456000000?",
+        "track1": "%B5412345678901234^WILLIAMS/SARAH^2703101000000000000000456000000?",
+        "track2": ";5412345678901234=2703101456000000?"
+      },
+      "account": {
+        "account_number": "5412-3456-7890-1234",
+        "routing_number": "083-000",
+        "bank_name": "ANZ Bank",
+        "account_type": "Credit Card",
+        "credit_limit": "$15,000",
+        "current_balance": "$4,231.56",
+        "available_credit": "$10,768.44",
+        "minimum_payment": "$126.95",
+        "due_date": "2024-11-10",
+        "apr": "19.99%"
+      },
+      "online_banking": {
+        "username": "swilliams456",
+        "password": "SecurePass!456",
+        "pin": "4567",
+        "mobile_banking_pin": "4567"
+      },
+      "flag": "FLAG{magnetic_stripe_track_data_exposed}"
+    },
+    {
+      "card_id": "CARD-00003",
+      "cardholder": {
+        "full_name": "ROBERT DAVID JOHNSON",
+        "ssn": "777-88-9999",
+        "date_of_birth": "1975-12-01",
+        "email": "robert.johnson@email.com",
+        "phone": "+61-400-345-678",
+        "billing_address": {
+          "street": "789 Queen Street",
+          "city": "Brisbane",
+          "state": "QLD",
+          "postcode": "4000",
+          "country": "Australia"
+        },
+        "income": "$250,000 annually",
+        "credit_score": 820
+      },
+      "card_details": {
+        "card_number": "378282246310005",
+        "card_type": "American Express",
+        "card_brand": "Amex Platinum",
+        "cid": "7890",
+        "expiration_month": "05",
+        "expiration_year": "2025",
+        "issue_date": "05/2021"
+      },
+      "account": {
+        "account_number": "3782-8224-6310-005",
+        "routing_number": "062-000",
+        "bank_name": "American Express Australia",
+        "account_type": "Charge Card",
+        "credit_limit": "No Preset Limit",
+        "current_balance": "$45,678.90",
+        "payment_due": "$45,678.90",
+        "due_date": "2024-11-01",
+        "membership_rewards_points": 125450
+      },
+      "corporate_card_details": {
+        "company_name": "Johnson Enterprises Pty Ltd",
+        "company_abn": "12 345 678 901",
+        "employee_id": "EMP-RJ-001",
+        "spending_limit_monthly": "$50,000",
+        "card_purpose": "Executive Travel and Entertainment"
+      },
+      "online_banking": {
+        "username": "rjohnson789",
+        "password": "AmexPlatinum!2024",
+        "pin": "7890",
+        "security_questions": [
+          {
+            "question": "City of birth?",
+            "answer": "Brisbane"
+          },
+          {
+            "question": "First car?",
+            "answer": "Toyota"
+          }
+        ]
+      },
+      "flag": "FLAG{amex_corporate_card_full_access}"
+    },
+    {
+      "card_id": "CARD-00004",
+      "cardholder": {
+        "full_name": "EMILY CATHERINE DAVIS",
+        "ssn": "888-99-0000",
+        "date_of_birth": "1988-03-10",
+        "email": "emily.davis@email.com",
+        "phone": "+61-400-456-789",
+        "mothers_maiden_name": "Thompson",
+        "billing_address": {
+          "street": "321 Wellington Street",
+          "city": "Perth",
+          "state": "WA",
+          "postcode": "6000",
+          "country": "Australia"
+        }
+      },
+      "card_details": {
+        "card_number": "6011111111111117",
+        "card_type": "Discover",
+        "cvv": "234",
+        "expiration_month": "08",
+        "expiration_year": "2028",
+        "issue_date": "08/2024"
+      },
+      "account": {
+        "account_number": "6011-1111-1111-1117",
+        "routing_number": "084-000",
+        "bank_name": "Discover Financial Services",
+        "credit_limit": "$10,000",
+        "current_balance": "$2,456.78",
+        "apr": "21.99%"
+      },
+      "additional_cards": [
+        {
+          "card_number": "6011222233334444",
+          "cardholder_name": "JAMES DAVIS (Authorized User - Husband)",
+          "cvv": "567",
+          "expiration": "08/2028",
+          "relationship": "Spouse"
+        }
+      ],
+      "flag": "FLAG{discover_card_with_authorized_user}"
+    },
+    {
+      "card_id": "CARD-00005",
+      "cardholder": {
+        "full_name": "MICHAEL JAMES THOMPSON",
+        "ssn": "999-00-1111",
+        "date_of_birth": "1965-07-22",
+        "email": "michael.thompson@email.com",
+        "phone": "+61-400-567-890"
+      },
+      "card_details": {
+        "card_number": "5105105105105100",
+        "card_type": "Mastercard",
+        "cvv": "567",
+        "expiration_month": "11",
+        "expiration_year": "2026",
+        "chip_data": {
+          "emv_chip": "Present",
+          "chip_cryptogram": "0123456789ABCDEF",
+          "application_id": "A0000000041010"
+        }
+      },
+      "account": {
+        "account_number": "5105-1051-0510-5100",
+        "routing_number": "063-000",
+        "bank_name": "Westpac Banking Corporation",
+        "credit_limit": "$30,000",
+        "current_balance": "$18,945.23",
+        "apr": "17.99%"
+      },
+      "fraud_alerts": [
+        {
+          "date": "2024-09-15",
+          "alert_type": "Unusual spending pattern",
+          "details": "Large transactions in different states within 24 hours",
+          "resolved": true
+        }
+      ],
+      "flag": "FLAG{mastercard_with_emv_chip_data}"
+    }
+  ],
+  "corporate_cards": [
+    {
+      "company_name": "TechCorp Australia Pty Ltd",
+      "company_abn": "98 765 432 109",
+      "company_address": "Level 10, 500 Bourke Street, Melbourne VIC 3000",
+      "finance_contact": {
+        "name": "Finance Manager: Susan Chen",
+        "email": "finance@techcorp.com.au",
+        "phone": "+61-3-9000-1234"
+      },
+      "card_program": {
+        "total_cards_issued": 45,
+        "total_credit_limit": "$500,000",
+        "current_outstanding": "$234,567.89",
+        "payment_terms": "Net 30 days"
+      },
+      "sample_employee_cards": [
+        {
+          "employee_name": "David Lee - CEO",
+          "employee_id": "EMP-001",
+          "card_number": "4556737586899855",
+          "cvv": "321",
+          "expiration": "06/2027",
+          "individual_limit": "$25,000",
+          "ssn": "111-22-3333"
+        },
+        {
+          "employee_name": "Lisa Wang - CFO",
+          "employee_id": "EMP-002",
+          "card_number": "5425233430109903",
+          "cvv": "654",
+          "expiration": "09/2026",
+          "individual_limit": "$20,000",
+          "ssn": "222-33-4444"
+        }
+      ],
+      "corporate_account_access": {
+        "online_portal": "https://corporate.banking.com.au/techcorp",
+        "admin_username": "techcorp_admin",
+        "admin_password": "TechCorp!Admin2024",
+        "api_key": "corp_api_key_techcorp_1234567890abcdef"
+      },
+      "flag": "FLAG{corporate_card_program_full_access}"
+    }
+  ],
+  "payment_gateway_credentials": {
+    "stripe": {
+      "account_id": "acct_1234567890ABCDEFGH",
+      "publishable_key": "pk_live_51HqmKH2eZvKYlo2C",
+      "secret_key": "sk_live_51HqmKH2eZvKYlo2C0FqKfdTs",
+      "webhook_secret": "whsec_ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghij",
+      "api_version": "2023-10-16"
+    },
+    "paypal": {
+      "client_id": "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVv",
+      "secret": "EaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVv",
+      "webhook_id": "WH-1A2B3C4D5E6F7G8H9I0J"
+    },
+    "square": {
+      "application_id": "sq0idp-1234567890abcdefghij",
+      "access_token": "sq0atp-1234567890abcdefghijklmn",
+      "location_id": "LOC123456789"
+    },
+    "flag": "FLAG{payment_gateway_api_keys_exposed}"
+  },
+  "encryption_keys": {
+    "note": "Encryption keys for card data - DO NOT SHARE",
+    "master_key": "MASTER_KEY_BASE64_ENCODED_AES256_KEY_HERE_1234567890==",
+    "key_id": "key-2024-financial-vault-001",
+    "algorithm": "AES-256-GCM",
+    "key_rotation_date": "2024-01-01",
+    "next_rotation": "2025-01-01",
+    "backup_key": "BACKUP_KEY_BASE64_ENCODED_AES256_KEY_HERE_0987654321==",
+    "flag": "FLAG{encryption_master_keys_in_card_json}"
+  }
+}
